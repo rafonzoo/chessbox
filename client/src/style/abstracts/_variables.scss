@@ -1,0 +1,68 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+$color-link: #F05200;
+
+/// Main brand color
+/// @type Color
+$brand-color: rgb(255, 108, 32) !default;
+
+/// Copy text color
+/// @type Color
+$text-color: rgb(26, 26, 26) !default;
+
+/// Field color
+/// @type Color
+$field-color: rgb(235, 233, 235) !default;
+
+/// Light grey
+/// @type Color
+$system-light: rgb(247, 245, 247) !default;
+
+/// Medium grey
+/// @type Color
+$system-gray: rgb(130, 128, 130) !default;
+
+
+/// Regular font family
+/// @type List
+$inter-text    : 'Inter' !default;
+
+/// Display font family
+/// @type List
+$inter-display : 'Inter Display' !default;
+
+
+$rem-unit: 16 !default;
+
+$safearea-regular-invalue  : 87.25 !default;
+$safearea-condensed-invalue: 91.4666667 !default;
+
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+
+
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+
+
+
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;

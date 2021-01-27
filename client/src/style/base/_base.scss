@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+body {
+  font-size: 1rem;
+  font-family: "Inter";
+  letter-spacing: -.011em;
+  background-color: $system-light;
+}
+
+#root,
+#main {
+  @include clearfix;
+}

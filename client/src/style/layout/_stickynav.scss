@@ -1,0 +1,69 @@
+// Sticky bar
+.stickynav {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.stickynav-wrapper {
+  display: flex;
+  align-items: center;
+  font-size: to-rem(10);
+  min-height: 5em;
+  background-color: #FFFFFFCC;
+  backdrop-filter: blur(10px);
+}
+
+.stickynav .sticky-item {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  min-height: inherit;
+  text-align: center;
+  flex: 0 0 auto;
+  width: 25%;
+  color: $system-gray;
+
+  &.active {
+    color: $brand-color;
+  }
+}
+
+.stickynav .content {
+  margin: auto;
+  margin-bottom: .6em;
+}
+
+.stickynav .icon,
+.stickynav .text {
+  line-height: 1;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stickynav .icon {
+  width: 2.4em;
+  height: 2.4em;
+  border-radius: .5em;
+  background-color: currentColor;
+}
+
+.stickynav .text {
+  font-weight: 500;
+  letter-spacing: -.004em;
+  margin-top: .3em;
+  margin-bottom: 0;
+
+  @at-root .stickynav .active .text {
+    color: $brand-color;
+  }
+}
+
+.stickynav .link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
