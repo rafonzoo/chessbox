@@ -121,9 +121,6 @@ const Profile = () => {
               })
             ) : ' Currently empty' }
           </ul>
-          <p className="profile-link">
-            {/* <Link className="btn btn-primary mt-3" to="/signout">Sign out</Link> */}
-          </p>
         </div>
       </div>
     );

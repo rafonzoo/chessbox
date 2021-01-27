@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
+    "package": "concurrently \"cd server && npm install\" \"cd client && npm install\"",
     "dev": "concurrently \"cd server && npm run server\" \"cd client && npm start\""
   },
   "author": "Rafa R.",

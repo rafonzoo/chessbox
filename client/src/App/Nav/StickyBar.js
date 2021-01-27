@@ -28,7 +28,7 @@ const StickyBar = () => {
         <StickyItem exact={ true } to="/" label="Home" />
         <StickyItem to="/explore" label="Explore" />
         <StickyItem to="/chat" label="Chats" />
-        <StickyItem to="/setting" label="Settings" />
+        <StickyItem to="/signout" label="Logout" />
         {/* <StickyItem to="/signup" label="Signup" />
         <StickyItem to="/profile" label="Profile" /> */}
 
