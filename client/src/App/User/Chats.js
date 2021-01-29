@@ -1,10 +1,16 @@
-import React from "react";
-import EmptyContent from "../Page/Empty";
+import { Fragment } from "react";
+import { GlobalHeader, LargeTitle } from "../Comp/Header";
+import { EmptyContent } from "../Page/Empty";
 
 const Chats = () => {
 
   return (
-    <EmptyContent />
+    <Fragment>
+      <GlobalHeader>
+        <LargeTitle label="Chats" />
+      </GlobalHeader>
+      <EmptyContent />
+    </Fragment>
   )
 }
 

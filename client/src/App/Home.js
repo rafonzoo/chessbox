@@ -1,19 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Fragment } from "react";
+import { EmptyContent } from "./Page/Empty";
+import { SearchInputTranslucent } from "./Form/Search";
+import { GlobalHeader, LargeTitle } from "./Comp/Header";
 
 const Home = () => {
   return (
-    <main id="main" className="main-home">
-      <div className="main-head">
-        <input className="head-input form-control" type="search" placeholder="Search some work..." />
-        <div className="head-account">
-          <figure className="account-icon">
-            <Link className="account-link" to="/signin" />
-          </figure>
-        </div>
-      </div>
-    </main>
-  )
+    <Fragment>
+      <GlobalHeader>
+        <LargeTitle label="Beranda" />
+        <SearchInputTranslucent />
+      </GlobalHeader>
+      <EmptyContent manualHeight="70vh" />
+    </Fragment>
+  );
 }
 
 export default Home;

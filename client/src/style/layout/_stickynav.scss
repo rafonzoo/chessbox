@@ -9,10 +9,11 @@
 .stickynav-wrapper {
   display: flex;
   align-items: center;
-  font-size: to-rem(10);
-  min-height: 5em;
-  background-color: #FFFFFFCC;
-  backdrop-filter: blur(10px);
+  justify-content: stretch;
+  font-size: to-rem($stickynav-bottom-fontSize);
+  min-height: $stickynav-bottom-minHeight + em;
+  background-color: $system-light;
+  border-top: $separator-translucent-black;
 }
 
 .stickynav .sticky-item {
@@ -21,8 +22,7 @@
   justify-content: center;
   min-height: inherit;
   text-align: center;
-  flex: 0 0 auto;
-  width: 25%;
+  flex: 1 0 auto;
   color: $system-gray;
 
   &.active {
@@ -37,7 +37,7 @@
 
 .stickynav .icon,
 .stickynav .text {
-  line-height: 1;
+  line-height: 1.2;
   margin-left: auto;
   margin-right: auto;
 }

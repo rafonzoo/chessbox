@@ -1,27 +1,30 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
-$color-link: #F05200;
+$color-link: #ff6633 !default;
 
 /// Main brand color
 /// @type Color
-$brand-color: rgb(255, 108, 32) !default;
+$brand-color: $color-link !default;
 
 /// Copy text color
 /// @type Color
-$text-color: rgb(26, 26, 26) !default;
+$text-color: #1a1a1a !default;
 
 /// Field color
 /// @type Color
-$field-color: rgb(235, 233, 235) !default;
+$field-color: #ebe9eb !default;
 
 /// Light grey
 /// @type Color
-$system-light: rgb(247, 245, 247) !default;
+$system-light: #FAFAFA !default;
 
 /// Medium grey
 /// @type Color
-$system-gray: rgb(130, 128, 130) !default;
+$system-gray: #828082 !default;
+
+$system-black: #000000 !default;
+$system-white: #FFFFFF !default;
 
 
 /// Regular font family
@@ -33,16 +36,12 @@ $inter-text    : 'Inter' !default;
 $inter-display : 'Inter Display' !default;
 
 
-$rem-unit: 16 !default;
-
-$safearea-regular-invalue  : 87.25 !default;
-$safearea-condensed-invalue: 91.4666667 !default;
+$rem-unit: 17 !default;
 
 
 /// Container's maximum width
 /// @type Length
 $max-width: 1180px !default;
-
 
 
 
@@ -66,3 +65,14 @@ $breakpoints: (
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '/assets/' !default;
+
+
+
+
+// Sticky Navigation Components
+$stickynav-bottom-fontSize: 10 !default;
+$stickynav-bottom-minHeight: 5.6 !default;
+
+// Border Separator / Devider Components
+$separator-translucent-black: 1px solid rgba($system-black, $alpha: .1) !default;
+$separator-translucent-white: 1px solid rgba($system-white, $alpha: .1) !default;

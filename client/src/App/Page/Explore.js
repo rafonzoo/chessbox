@@ -1,5 +1,5 @@
 import React from "react";
-import EmptyContent from "./Empty";
+import { EmptyContent } from "./Empty";
 
 const Explore = () => {
 

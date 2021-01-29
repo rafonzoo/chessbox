@@ -26,9 +26,8 @@ const StickyBar = () => {
     <nav id="stickynav" className="stickynav">
       <div className="stickynav-wrapper">
         <StickyItem exact={ true } to="/" label="Home" />
-        <StickyItem to="/explore" label="Explore" />
         <StickyItem to="/chat" label="Chats" />
-        <StickyItem to="/signout" label="Logout" />
+        <StickyItem to="/setting" label="Setelan" />
       </div>
     </nav>
   )

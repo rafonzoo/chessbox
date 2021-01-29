@@ -2,16 +2,19 @@
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
 
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: $rem-unit + px;
+}
+
 body {
   margin: 0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   letter-spacing: -.011em;
-  background-color: $system-light;
-  font-size: 1rem;
+  background-color: $system-white;
 }
 
 code {

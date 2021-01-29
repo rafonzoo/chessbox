@@ -37,9 +37,9 @@
   margin-right: auto;
 
   @if ($condensed) {
-    width: #{$safearea-regular-invalue + "%"};
+    width: 1.5rem;
   } @else {
-    width: #{$safearea-condensed-invalue + "%"};
+    width: calc(100% - (2 * 1rem));
   }
 }
 
@@ -47,5 +47,23 @@
   &::before, &::after {
     content: ' ';
     display: table;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-ms-input-placeholder {
+    @content;
+  }
+  &::placeholder {
+    @content;
   }
 }
