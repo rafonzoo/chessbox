@@ -2,11 +2,13 @@
   "name": "chessbox",
   "version": "0.1.0",
   "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "cd server && node server.js",
-    "package": "concurrently \"cd server && npm install\" \"cd client && npm install\"",
-    "dev": "concurrently \"cd server && npm run server\" \"cd client && npm start\"",
-    "pre-build": "concurrently \"cd server && npm install\" \"cd client && npm install && npm run build\"",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "package": "concurrently \"npm install\" \"cd client && npm install\"",
+    "dev": "concurrently \"npm run server\" \"cd client && npm start\"",
+    "pre-build": "cd client && npm install && npm run build",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run pre-build"
   },
   "engines": {
@@ -15,6 +17,14 @@
   "author": "Rafa R.",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^5.3.0"
+    "concurrently": "^5.3.0",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "joi-objectid": "^3.0.1",
+    "mongoose": "^5.11.11",
+    "nodemon": "^2.0.7"
   }
 }
