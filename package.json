@@ -5,7 +5,7 @@
   "scripts": {
     "package": "concurrently \"cd server && npm install\" \"cd client && npm install\"",
     "dev": "concurrently \"cd server && npm run server\" \"cd client && npm start\"",
-    "build": "concurrently \"cd server && npm install\" \"cd client && npm install && npm run build\"",
+    "build": "concurrently \"cd server && npm install && npm run server\" \"cd client && npm install && npm run build\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "engines": {
