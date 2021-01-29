@@ -29,11 +29,6 @@ const StickyBar = () => {
         <StickyItem to="/explore" label="Explore" />
         <StickyItem to="/chat" label="Chats" />
         <StickyItem to="/signout" label="Logout" />
-        {/* <StickyItem to="/signup" label="Signup" />
-        <StickyItem to="/profile" label="Profile" /> */}
-
-        {/* { !userIsLoggedIn ? <StickyItem to="/signin" label="Signin" /> : <StickyItem to="/profile" label="Profile" /> }
-        { !userIsLoggedIn ? <StickyItem to="/signup" label="Signup" /> : <StickyItem to="/signout" label="Signout" /> } */}
       </div>
     </nav>
   )

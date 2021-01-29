@@ -4,7 +4,12 @@
   "description": "",
   "scripts": {
     "package": "concurrently \"cd server && npm install\" \"cd client && npm install\"",
-    "dev": "concurrently \"cd server && npm run server\" \"cd client && npm start\""
+    "dev": "concurrently \"cd server && npm run server\" \"cd client && npm start\"",
+    "build": "concurrently \"cd server && npm install\" \"cd client && npm install && npm run build\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
+  },
+  "engines": {
+    "node": "12.13.1"
   },
   "author": "Rafa R.",
   "license": "ISC",

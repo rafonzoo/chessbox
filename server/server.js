@@ -8,8 +8,9 @@ const app       = express();
 
 const db        = 'mongodb://localhost/dproject';
 const port      = process.env.PORT || 4000;
+const atlasUrl  = `mongodb+srv://rfzdev:chessbox@cluster0.09fng.mongodb.net/chessbox?retryWrites=true&w=majority`;
 
-mongoose.connect(db, {
+mongoose.connect(atlasUrl, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true,
@@ -22,8 +23,8 @@ mongoose.connect(db, {
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(cors());
 app.use(parser.json());
-app.use('/api/user', users);
-app.use('/api/auth', auth);
+// app.use('/api/user', users);
+// app.use('/api/auth', auth);
 app.use(parser.urlencoded({ extended: true }));
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
