@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
+    "start": "cd server && node server.js",
     "package": "concurrently \"cd server && npm install\" \"cd client && npm install\"",
     "dev": "concurrently \"cd server && npm run server\" \"cd client && npm start\"",
-    "build": "concurrently \"cd server && npm install\" \"cd client && npm install && npm run build\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
+    "pre-build": "concurrently \"cd server && npm install\" \"cd client && npm install && npm run build\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run pre-build"
   },
   "engines": {
     "node": "12.13.1"
