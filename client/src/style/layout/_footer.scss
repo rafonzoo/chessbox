@@ -20,6 +20,6 @@
 
 .MuiOverride .MuiBottomNavigationAction-label {
   font-size: to-rem($stickynav-bottom-fontSize);
-  letter-spacing: 0;
+  letter-spacing: -.021em;
   font-weight: 600;
 }
