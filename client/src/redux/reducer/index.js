@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import { globalReducer } from './global';
+import { reducerUser } from './global';
 
 const CombineReducer = combineReducers({
-  globalReducer,
+  reducerUser,
 });
 
 export default CombineReducer;

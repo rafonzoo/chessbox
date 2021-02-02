@@ -1,11 +1,14 @@
 // import { userStorage } from "../../helper/storage";
 
 const globalStates = {
-  user: {}
+  account: {}
 };
 
-export const globalReducer = (state = globalStates, action) => {
+export const reducerUser = (state = globalStates, action) => {
   switch(action.type) {
+    case 'USER_DATA':
+      return { ...state, account: action.payload };
+
     case 'USER_LOGGED_IN':
       return { ...state, user: action.payload };
 
@@ -19,4 +22,4 @@ export const globalReducer = (state = globalStates, action) => {
   }
 }
 
-export default globalReducer;
+export default reducerUser;

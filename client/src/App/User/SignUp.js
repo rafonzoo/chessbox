@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { MuiButton } from '../../helper/mui';
 import { setTokenStorage } from '../../helper/storage';
 import TextField from '@material-ui/core/TextField';
@@ -7,7 +8,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from "axios";
 
-const SignUp = () => {
+const SignUp = ({ dialog }) => {
   // Define initial states
   const [user, setUser] = useState({
     email           : '',
@@ -17,7 +18,9 @@ const SignUp = () => {
   });
 
   const [message, setMessage] = useState('');
-  const [open, setOpen] = useState(false);
+  const [backdrop, setBackdrop] = useState(false);
+  const [status, setStatus] = useState('Masuk');
+  const history = useHistory();
 
   const showError = {
     email: {
@@ -54,6 +57,9 @@ const SignUp = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
+    setStatus('Memeriksa...');
+    setBackdrop(true);
+
     axios.post('/api/user', {
       username        : user.username,
       email           : user.email,
@@ -65,19 +71,20 @@ const SignUp = () => {
       (response) => {
         setTokenStorage(response.data.body);
         setMessage(response.data.message);
-        setOpen(true);
+        setStatus('Berhasil!');
+
+        history.push('/profile');
+        setBackdrop(false);
+        dialog(false);
       },
       (error) => {
         setMessage(error.response.data.message);
-        setOpen(false)
+        setStatus('Daftar');
+        setBackdrop(false);
       }
     );
 
     setMessage('');
-  }
-
-  if (message !== '' && message.includes('success')) {
-    setTimeout(() => (window.location.href = '/profile'), 1400);
   }
 
   return (
@@ -136,12 +143,11 @@ const SignUp = () => {
           className="action"
           disableElevation
         >
-          { message.includes('success') ? 'Berhasil!' : 'Daftar' }
+          { status }
         </MuiButton>
       </form>
       <Backdrop
-        open={open}
-        onClick={() => setOpen(false)}
+        open={backdrop}
         style={{
           zIndex: '1',
           backgroundColor: 'rgba(255,255,255, .5)'

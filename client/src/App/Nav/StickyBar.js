@@ -12,7 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseRounded from '@material-ui/icons/CloseRounded';
 import SignIn from '../User/SignIn';
 import Toolbar from '@material-ui/core/Toolbar';
-import { Button } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 import SignUp from '../User/SignUp';
 
 const ButtonAction = ({
@@ -134,7 +134,7 @@ const StickyNavigation = () => {
               Daftar
             </Button>
           </Toolbar>
-          <SignIn />
+          <SignIn dialog={setOpen} />
         </Dialog>
         <Dialog
           fullScreen open={signup}
@@ -161,7 +161,7 @@ const StickyNavigation = () => {
               Masuk
             </Button>
           </Toolbar>
-          <SignUp />
+          <SignUp dialog={setSignup} />
         </Dialog>
       </div>
     </nav>
