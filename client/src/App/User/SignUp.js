@@ -54,7 +54,7 @@ const SignUp = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:4000/api/user', {
+    axios.post('/api/user', {
       username        : user.username,
       email           : user.email,
       password        : user.password,

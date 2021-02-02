@@ -39,7 +39,7 @@ const SignIn = () => {
     e.preventDefault();
 
     // Going to validating the form
-    axios.post('http://localhost:4000/api/auth', {
+    axios.post('/api/auth', {
       email           : user.email,
       password        : user.password,
     })

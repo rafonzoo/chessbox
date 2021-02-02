@@ -16,7 +16,7 @@ if (!config.get('PrivateKey')) {
 	process.exit(1);
 }
 
-mongoose.connect(atlasUrl, {
+mongoose.connect(db, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true,
