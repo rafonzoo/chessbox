@@ -1,10 +1,14 @@
-import React from "react";
-import { EmptyContent } from "./Empty";
+import { Fragment } from "react";
+import { GlobalHeader, LargeTitle } from "../Comp/Header";
 
 const Explore = () => {
 
   return (
-    <EmptyContent />
+    <Fragment>
+      <GlobalHeader>
+        <LargeTitle noImage={true} label="Jelajah" />
+      </GlobalHeader>
+    </Fragment>
   )
 }
 

@@ -1,3 +1,70 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.CSX, .CSXBottomNavigation-wrapper,
+.CSX ~ .MuiDialog-root {
+  max-width: to-rem(425);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#CSXHeader {
+  background-color: $brand-color;
+  color: $system-white;
+  @include clearfix;
+
+  > *:last-child {
+    margin-bottom: to-rem(14);
+  }
+
+  .CSXHeaderMain + * {
+    margin-top: to-rem(9);
+    display: block;
+  }
+
+  .CSXSafearea {
+    @include safearea(false);
+  }
+
+  .CSXHeaderMain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: to-rem(24);
+  }
+
+  .CSXLargeTitle-image +
+  .CSXLargeTitle-label {
+    margin-left: to-rem(9);
+  }
+
+  @at-root
+    .CSXHeaderMain
+    .CSXLargeTitle {
+      display: flex;
+      align-items: center;
+  }
+
+  @at-root
+    .CSXLargeTitle
+    .CSXLargeTitle-label {
+      font-size: to-rem(34);
+      font-weight: bold;
+      line-height: to-rem(42);
+      font-family: $inter-display;
+  }
+
+  @at-root
+    .CSXLargeTitle
+    .CSXLargeTitle-image {
+      background-color: $system-white;
+      border-radius: 50%;
+      width: to-rem(36);
+      height: to-rem(36);
+  }
+}
+

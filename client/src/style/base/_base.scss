@@ -2,6 +2,11 @@
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
 
+*, ::after, ::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,7 +27,14 @@ code {
     monospace;
 }
 
-#root,
-#main {
-  @include clearfix;
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a {
+  color: $brand-color;
+  text-decoration: none;
 }

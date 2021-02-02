@@ -1,17 +1,17 @@
 export const GlobalHeader = ({ children }) => {
   return (
-    <header id="global-header">
+    <header id="CSXHeader" className="CSXHeader">
       { children }
     </header>
   );
 }
 
-export const LargeTitle = ({ label, children }) => {
+export const LargeTitle = ({ label, children, noImage }) => {
   return (
-    <div className="header-content">
-      <div className="content-wrapper">
-        <div className="content-user-picture"></div>
-        <div className="content-text">{label}</div>
+    <div className="CSXHeaderMain CSXSafearea">
+      <div className="CSXLargeTitle">
+        { !noImage ? <div className="CSXLargeTitle-image"></div> : null }
+        <div className="CSXLargeTitle-label">{label}</div>
       </div>
       { children ? children : null }
     </div>

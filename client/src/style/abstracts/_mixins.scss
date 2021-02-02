@@ -32,12 +32,12 @@
   }
 }
 
-@mixin safearea($condensed: true) {
+@mixin safearea($condensed: false) {
   margin-left: auto;
   margin-right: auto;
 
   @if ($condensed) {
-    width: 1.5rem;
+    width: calc(100% - (2 * 1.5rem));
   } @else {
     width: calc(100% - (2 * 1rem));
   }

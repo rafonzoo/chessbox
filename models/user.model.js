@@ -22,10 +22,19 @@ const User = mongoose.model('User', new mongoose.Schema({
 		minlength: 5,
 		maxlength: 1024
 	},
+	confirmPassword: {
+		type: String,
+		required: true,
+		minlength: 5,
+		maxlength: 1024
+	},
 	entries: [{
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'Post'
-	}]
+	}],
+	deposit: {
+		type: Number,
+	}
 })
 
 .method("toJSON", function() {
@@ -42,7 +51,8 @@ function validateUser(user) {
 	const schema = Joi.object({
 		username: Joi.string().min(5).max(50).required(),
 		email: Joi.string().min(5).max(255).required().email(),
-		password: Joi.string().min(5).max(255).required()
+		password: Joi.string().min(5).max(255).required(),
+		confirmPassword: Joi.string().min(5).max(255).required()
 	});
 
 	return schema.validate(user);

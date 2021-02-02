@@ -4,17 +4,23 @@ const express   = require('express');
 const parser    = require('body-parser');
 const mongoose  = require('mongoose');
 const cors      = require('cors');
+const config 		= require('config');
 const app       = express();
 
 const db        = 'mongodb://localhost/dproject';
 const port      = process.env.PORT || 4000;
 const atlasUrl  = `mongodb+srv://rfzdev:chessbox@cluster0.09fng.mongodb.net/chessbox?retryWrites=true&w=majority`;
 
+if (!config.get('PrivateKey')) {
+	console.error('FATAL ERROR: PrivateKey is not defined.');
+	process.exit(1);
+}
+
 mongoose.connect(atlasUrl, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true,
-	useFindAndModify: true
+	useFindAndModify: false
 })
 	.then(()   => console.log('Now connected to database!'))
 	.catch(err => console.error('Something went wrong', err));
@@ -23,8 +29,8 @@ mongoose.connect(atlasUrl, {
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(cors());
 app.use(parser.json());
-// app.use('/api/user', users);
-// app.use('/api/auth', auth);
+app.use('/api/user', users);
+app.use('/api/auth', auth);
 app.use(parser.urlencoded({ extended: true }));
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

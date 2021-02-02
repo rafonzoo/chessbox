@@ -1,3 +1,25 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+.CSXBottomNavigation {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.CSXBottomNavigation-wrapper
+.MuiBottomNavigation-root {
+  border-top: $separator-translucent-black;
+  background-color: $system-light;
+}
+.CSXBottomNavigation-wrapper
+.MuiBottomNavigationAction-root {
+  min-width: calc(100% / 5);
+}
+
+.MuiOverride .MuiBottomNavigationAction-label {
+  font-size: to-rem($stickynav-bottom-fontSize);
+  letter-spacing: 0;
+  font-weight: 600;
+}

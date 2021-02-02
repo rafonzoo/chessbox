@@ -1,0 +1,47 @@
+.MuiOverride .MuiInputBase-root,
+.MuiOverride .MuiButton-root {
+  border-radius: to-rem(7);
+}
+
+// .MuiOverride ~ .MuiDialog-root {
+//   .MuiInputBase-root,
+//   .MuiButton-root {
+//     border-radius: to-rem(7);
+//   }
+// }
+
+.CSXTextField {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  color: $system-black;
+  background-color: $system-white;
+  background-clip: padding-box;
+  border: $separator-translucent-black;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: to-rem(5);
+  padding: to-rem(6) to-rem(10);
+  line-height: 1.47025;
+}
+
+.CSXTextField-translucent {
+  border-width: 0;
+  color: $system-white;
+  border-color: transparent;
+  background-color: #D75229;
+
+  @include placeholder {
+    color: rgba($system-white, .8);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    color: $system-white;
+    border-color: transparent;
+    background-color: #D75229;
+  }
+}
+

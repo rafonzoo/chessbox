@@ -16,18 +16,17 @@
 // 4. Layout-related sections
 @import
   'layout/header',
-  'layout/footer',
-  'layout/stickynav',
-  'layout/profile';
+  'layout/footer';
 
 // 5. Components
 @import
   'components/button',
-  'components/input';
+  'components/textfield';
 
 // 6. Page-specific styles
 @import
-  'pages/home';
+  // 'pages/home',
+  'pages/auth';
 
 // 7. Themes
 @import

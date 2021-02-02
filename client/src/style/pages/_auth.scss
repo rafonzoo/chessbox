@@ -1,0 +1,74 @@
+#CSXAuthentication-SignIn
+.CSXAuthentication-title {
+  max-width: to-rem(230);
+  text-align: center;
+}
+
+#CSXAuthentication-SignUp
+.CSXAuthentication-title {
+  max-width: to-rem(200);
+  text-align: center;
+}
+
+.CSXAuthentication {
+  @include clearfix;
+
+  // Authenticated page doesn't need sticky
+  // navigation. Remove it visually.
+  + .CSXBottomNavigation { display: none; }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // min-height: 667px;
+    height: 100vh;
+  }
+  
+  &-content {
+    display: block;
+    @include safearea(true);
+
+    > form {
+      .MuiFormControl-root {
+        min-width: 100%;
+      }
+
+      .MuiFormControl-root +
+      .MuiFormControl-root {
+        margin-top: 1rem;
+      }
+  
+      .MuiButton-containedSizeLarge {
+        padding: 14px 22px;
+        min-width: 100%;
+        margin-top: to-rem(17);
+      }
+    }
+  }
+
+  &-title {
+    font-size: to-rem(39);
+    line-height: 44px;
+    font-weight: bold;
+    font-family: $inter-display;
+    margin: auto;
+  }
+
+  &-title + * {
+    margin-top: to-rem(40);
+  }
+}
+
+.CSXAbsoluteToolbar .MuiToolbar-root {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.MuiOverride {
+  .MuiFormControl-root +
+  .MuiFormControl-root {
+    margin-top: to-rem(17);
+  }
+}

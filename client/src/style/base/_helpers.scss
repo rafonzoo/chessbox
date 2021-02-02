@@ -5,10 +5,12 @@
 /**
  * Clear inner floats
  */
-.clearfix::after {
-  clear: both;
-  content: '';
-  display: table;
+.CSXComponent {
+  &::before, &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
 }
 
 /**
@@ -16,7 +18,7 @@
  * Shamelessly borrowed from HTML5Boilerplate:
  * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
  */
-.visually-hidden {
+.CSXVisuallyHidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
